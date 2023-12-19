@@ -58,6 +58,7 @@
 .subcategories{
     margin-top: 0.5em;
     display: flex;
+    align-items: baseline;
     flex-direction: column;
     gap: 0.4em;
 }
