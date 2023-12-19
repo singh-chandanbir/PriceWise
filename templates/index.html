@@ -6,6 +6,15 @@
     <title>PriceWise</title>
 </head>
 <body>
-    <h1>Hello SIH</h1>
+    <h1>PriceWise</h1>
+
+    <form action="/categories" method="POST">
+        
+        <input type="text" autocomplete="off" autofocus placeholder="Enter Search Query Here" required name = "searchquery" id = "searchquery">
+        <input type="submit" value="Search">
+
+    </form>
+
+    {% block body %}{% endblock body %}
 </body>
 </html>
