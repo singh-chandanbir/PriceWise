@@ -54,6 +54,8 @@
 
 .subcategories{
     margin-top: 0.2em;
+    display: flex;
+    flex-direction: column;
 }
 .subcategories button{
     color: var(--secondary-color);
