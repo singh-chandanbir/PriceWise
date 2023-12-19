@@ -70,8 +70,8 @@ navbar .referral:hover{
 }
 .product_category_block{
     float: left;
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 200px;
     background-color: #859097;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
@@ -80,4 +80,7 @@ navbar .referral:hover{
 .footer{
     height: 50px;
     background-color: #07222e;
+}
+.outer_product_category_block{
+    padding: 10px,10px,10px,10px;
 }
