@@ -1,26 +1,45 @@
-{% extends "index.html" %}
+{% extends "index.html" %} {% block body %}
 
-{% block body %}
- 
-    <button><a href="{{ url_for('landing') }}">Back</a></button>
-    <br>
-    <h2>You Searched For : {{searchquery}}</h2>
-    <h3>Here are the results </h3>
-    <hr>
-    <hr>
-    <results>
-    <form action="/Products" method="POST">
-        {% for category, subcategories in categories.items() %}
-            {{ category.title() }}
-            <ul>
-                {% for name, link in subcategories.items() %}
-                    <li><button type="submit" name = "selected_product" value="{{ link }}"> {{ name }} </button></li>
-                {% endfor %}
-            </ul>
-            <hr>
-        {% endfor %}
-    </form>
-    </results>
-    <br>
-    <hr>
+<!-- <button><a href="{{ url_for('landing') }}">Back</a></button> -->
+<br />
+<div>
+  <a href="{{ url_for('landing') }}"
+    ><img
+      class="back_arrow"
+      src="{{ url_for('static', filename = 'media/back_arrow.png')}}"
+      alt="Back-arrow"
+  /></a>
+
+  <h2 class="your_search">You Searched For : {{searchquery}}</h2>
+</div>
+<!-- <h3>Here are the results</h3> -->
+<!-- <hr /> -->
+<div class="product_category_block"></div>
+  <results>
+      <form action="/Products" method="POST">
+          {% for category, subcategories in categories.items() %} 
+          <div class="product_category_block">
+           {{ category.title() }}
+          
+          <ul>
+            {% for name, link in subcategories.items() %}
+            
+            <li>
+              <button type="submit" name="selected_product" value="{{ link }}">
+                {{ name }}
+              </button>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+          {% endfor %}
+        
+      </form>
+  
+  </results>
+</div>
+<div class = footer>
+  <p>copyright team techy trek</p>
+</div>
 {% endblock body %}
