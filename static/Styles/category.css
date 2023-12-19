@@ -1,4 +1,7 @@
+
+
 .headline{
+    margin-top: 1em ;
     display: flex;
     align-items: center;
     justify-content: baseline;
@@ -53,18 +56,24 @@
 }
 
 .subcategories{
-    margin-top: 0.2em;
+    margin-top: 0.5em;
     display: flex;
     flex-direction: column;
+    gap: 0.4em;
 }
 .subcategories button{
     color: var(--secondary-color);
     cursor: pointer;
 
 }
-
+#seperator{
+    background-color: var(--secondary-color);
+    height: 1px;
+    margin-top: 0.5em;
+}
 .subcategories button:hover{
-    color: #6868e0;
+    filter: drop-shadow(1px 1px 2px white);
+    
 }
 .footer{
     height: 50px;

@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="{{ url_for('static', filename = './Styles/category.css') }}">
 
 <!-- <button><a href="{{ url_for('landing') }}">Back</a></button> -->
-<br />
 <div class="headline">
   <a href="{{ url_for('landing') }}"><img class="back_arrow"
       src="{{ url_for('static', filename = 'media/back_arrow.png')}}" alt="Back-arrow" /></a>
@@ -24,7 +23,7 @@
     <div class="category-heading">
       {{ category.title() }}
     </div>
-  
+    <hr id = "seperator">
     <div class="subcategories">
 
       {% for name, link in subcategories.items() %}
