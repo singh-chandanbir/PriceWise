@@ -2,6 +2,8 @@
 {% block suggestions%}
 {% endblock %}
 {% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename = './Styles/products.css') }}">
+
 <div class="products">
     <div class="left_portion">
         {% for product in productlist %}
