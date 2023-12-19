@@ -1,5 +1,43 @@
+
+
 .products {
     display: flex; /* Use flexbox */
-    width: 100%; /* Ensure the container takes the full width of the parent */
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2em;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+    /* Ensure the container takes the full width of the parent */
+    
   }
-  
+  .product button{
+    cursor: pointer;
+    color: var(--secondary-color);
+  }
+  .product:hover{
+    border: 1px solid white;
+  }
+  .products .product{
+    padding: 1.5em 0.2em 1em;
+    width: 15em;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: var(--backdrop-filter);
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    margin: 0.2em 1em;
+  }
+ .product-image img{
+  border-radius: 8px;
+ }
+  #title{
+    margin: 0.4em 1em 0.2em;
+
+    font-weight: bold;
+    font-family: var(--primary-font);
+  }
+  #brand{
+      font-weight: bold;
+      font-family: var(--secondary-font);
+      opacity: 0.8;
+  }
