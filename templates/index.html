@@ -47,7 +47,9 @@
             
         
     </form>
-    
+    {% block suggestions %}
+
+
     <div class="quicksearch">
         <div class="head">
             Commonly Searched Items
@@ -71,7 +73,7 @@
 
         </div>
     </div>
-
+{% endblock %}
 
     
     {% block body %}{% endblock body %}
