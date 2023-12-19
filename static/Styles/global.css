@@ -16,6 +16,7 @@
     --primary-color : #d9e1ff; */
     --secondary-font : "Nanum Gothic";
     --primary-font : "Signika Negative";
+    
 }
 body{
     display: flex;
