@@ -26,9 +26,7 @@ def get_exporters_products(query):
                 details_list.append(data)
                 
         return details_list
+    
         
     else:
         print("Failed to fetch content from the URL")
-        
-query = input("Enter product name: ")
-get_exporters_products(query)
