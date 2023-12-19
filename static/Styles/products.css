@@ -3,12 +3,3 @@
     width: 100%; /* Ensure the container takes the full width of the parent */
   }
   
-.left_protion {
-    flex: 70%; /* Take 70% of the container's width */
-    /* Optionally add styling */
-  }
-  
-.right_protion {
-    flex: 30%; /* Take 30% of the container's width */
-    /* Optionally add styling */
-  }

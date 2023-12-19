@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block suggestions%}
+{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename = './Styles/products.css') }}">
+
+<img src="{{product.product_image_link}}" alt="" width = "300px" height="300px">
+<a href="{{product.product_link}}"></a>Title: {{product.product_title}} </button>
+<p>Brand: {{product.product_brand}}</p>
+<p>Min Quantity: {{product.product_min_qty}}</p>
+<p>List Price: {{product.product_list_price}}</p>
+<p>Final Price: {{product.product_final_price}}</p>
+
+
+{% endblock body %}

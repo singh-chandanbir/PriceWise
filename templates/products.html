@@ -3,24 +3,25 @@
 {% endblock %}
 {% block body %}
 <link rel="stylesheet" href="{{ url_for('static', filename = './Styles/products.css') }}">
-
 <div class="products">
-    <div class="left_portion">
+    <form action="/comparison" method="POST">
         {% for product in productlist %}
-    <a href="{{product.product_link}}">
-        <img src="{{product.product_image_link}}" alt="" width = "200px" height="200px">
-        <p>Title: {{product.product_title}}</p>
-        <p>Brand: {{product.product_brand}}</p>
-        <p>Min Quantity: {{product.product_min_qty}}</p>
-        <p>List Price: {{product.product_list_price}}</p>
-        <p>Final Price: {{product.product_final_price}}</p>
-    </a>
-    <br>
-    <br>
-{% endfor %}
-    </div>
-</div>
 
+            <button type="submit" name="selected_button" value="product">
+            <img src="{{product.product_image_link}}" alt="" width = "200px" height="200px">
+            <p>Title: {{product.product_title}}</p>
+            <p>Brand: {{product.product_brand}}</p>
+            <p>Min Quantity: {{product.product_min_qty}}</p>
+            <p>List Price: {{product.product_list_price}}</p>
+            <p>Final Price: {{product.product_final_price}}</p>
+            </button>
+            <br>
+            <br>
+        {% endfor %}
+        <input type="hidden" name="query" value={{ searchquery }}>
+    </form>
+
+</div>
 
 <form action="/Products_page=" method="POST">
     <input type="hidden" name="page link" value="{{page_link}}">
@@ -31,6 +32,7 @@
     {% if current_page < total_pages %}
         <button type="submit" name = "button_name" value="{{ current_page + 1 }}"> Next </button>
     {% endif %}
+    <input type="hidden" name="query" value={{ searchquery }}>
 </form>
 
 
