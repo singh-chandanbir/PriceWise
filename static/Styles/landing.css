@@ -97,7 +97,7 @@ html{
 
   .brand img {
     width: 75em;
-    animation: scrollLeft 8s linear infinite;
+    animation: scrollLeft 15s linear infinite;
   }
 
   .brand img:first-child {
