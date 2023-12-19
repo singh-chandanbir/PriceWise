@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 def get_exporters_products(query):
     url = f"https://www.exportersindia.com/search.php?srch_catg_ty=prod&term={query}&cont=IN&ss_status=N"
 
-    # Fetch the HTML content from the URL
     details_list = []
     response = requests.get(url)
     if response.status_code == 200:
