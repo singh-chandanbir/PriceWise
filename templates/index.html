@@ -4,17 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PriceWise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Signika+Negative:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename = './Styles/global.css') }}">
+
+
 </head>
 <body>
-    <h1>PriceWise</h1>
+    <navbar>
+        <div class="bname">
+            PriceWise
+        </div>
+        <div class="logos">
+            <img src="{{ url_for('static', filename = 'media/SIH_Horizontal-Logo-color.png')}}" alt="sih-logo">
+            <img src="{{ url_for('static', filename = 'media/MoE-Logo-HD.png')}}" alt="sih-logo">
+            <img src="{{ url_for('static', filename = 'media/AKAM-Hindi-transparent.png')}}" alt="sih-logo">
+        </div>
+        <div class="referral">
+            <a href="https://gem.gov.in/">
+                <img src="{{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}}" alt="Go to Gem Portal">
+            </a>
+        </div>
+    </navbar>
+    <link rel="stylesheet" href="{{ url_for('static', filename = './Styles/landing.css')}}">
+    <div class="quicksearch">
+        <div class="head">
+            Commonly Searched Items
+        </div>
+        <div class="searches">
 
+        </div>
+    </div>
+    
+    
+    <h1>
+        Gem Comparison
+    </h1>
     <form action="/categories" method="POST">
         
         <input type="text" autocomplete="off" autofocus placeholder="Enter Search Query Here" required name = "searchquery" id = "searchquery">
         <input type="submit" value="Search">
 
     </form>
-
     {% block body %}{% endblock body %}
 </body>
 </html>

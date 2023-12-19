@@ -1,0 +1,7 @@
+.quicksearch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secondary-color);
+    padding: 0.5em;
+}
