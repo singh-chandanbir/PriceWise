@@ -33,6 +33,21 @@
             </a>
         </div>
     </navbar>
+    
+    
+    
+    <form action="/categories" method="POST" class = "searchbar">
+        
+            
+                <!-- <div class="col-md-12"> -->
+                    <input type="text" autocomplete="off" autofocus
+                        placeholder="Enter Search Query Here" required name="searchquery" id="searchquery">
+                    <input class=" search_btn" type="submit" value="Search">
+                <!-- </div> -->
+            
+        
+    </form>
+    
     <div class="quicksearch">
         <div class="head">
             Commonly Searched Items
@@ -58,17 +73,7 @@
     </div>
 
 
-    <form action="/categories" method="POST" class = "searchbar">
-        
-            
-                <!-- <div class="col-md-12"> -->
-                    <input type="text" autocomplete="off" autofocus
-                        placeholder="Enter Search Query Here" required name="searchquery" id="searchquery">
-                    <input class=" search_btn" type="submit" value="Search">
-                <!-- </div> -->
-            
-        
-    </form>
+    
     {% block body %}{% endblock body %}
 </body>
 
