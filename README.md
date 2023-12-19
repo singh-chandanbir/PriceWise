@@ -1,2 +1,2 @@
 # PriceWise
-repo of finals
+repo for SIH finals
