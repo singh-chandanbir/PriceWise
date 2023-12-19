@@ -53,7 +53,9 @@ def products_page():
 def comparison():
     product = request.form.get("selected_button")
     query = request.form.get("query")
-    return rt("product_view.html", product=product)
+    exporterslist = get_exporters_products(query)
+    flipkartlist = getFlipkartProducts(query)
+    return rt("product_view.html", product=product, exporterslist = exporterslist, flipkartlist = flipkartlist)
 
 if __name__ == '__main__':
     app.run(debug=True)
