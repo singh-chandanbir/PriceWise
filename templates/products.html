@@ -7,7 +7,7 @@
     <form action="/comparison" method="POST">
         {% for product in productlist %}
 
-            <button type="submit" name="selected_button" value="product">
+            <button type="submit" name="selected_button" value="{{product.product_title}}">
             <img src="{{product.product_image_link}}" alt="" width = "200px" height="200px">
             <p>Title: {{product.product_title}}</p>
             <p>Brand: {{product.product_brand}}</p>

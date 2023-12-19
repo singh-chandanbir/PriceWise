@@ -15,7 +15,7 @@ def getFlipkartProducts(query):
             title = product.find('a', class_='s1Q9rs').text
             price = product.find('div', class_='_30jeq3').text
             image_url = product.find('img', class_='_396cs4')['src']
-            product_url = product.find('a', class_='s1Q9rs')['href']
+            product_url = 'https://www.flipkart.com' + htmlsoup.find('a', class_='_2rpwqI')['href']
             data = {"title": title, "price": price, "image_url": image_url, "product_url": product_url}
             details_list.append(data)        
 
