@@ -2,8 +2,9 @@
 {% block suggestions%}
 {% endblock %}
 {% block body %}
-
-{% for product in productlist %}
+<div class="products">
+    <div class="left_portion">
+        {% for product in productlist %}
     <a href="{{product.product_link}}">
         <img src="{{product.product_image_link}}" alt="" width = "200px" height="200px">
         <p>Title: {{product.product_title}}</p>
@@ -15,6 +16,12 @@
     <br>
     <br>
 {% endfor %}
+    </div>
+    <div class="right_protion">
+
+    </div>
+</div>
+
 
 <form action="/Products_page=" method="POST">
     <input type="hidden" name="page link" value="{{page_link}}">

@@ -62,3 +62,7 @@
     /* transform: translateX(220%); */
 
 }
+
+.bname a:visited{
+    text-decoration: none;
+}
