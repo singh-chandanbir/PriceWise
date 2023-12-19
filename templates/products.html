@@ -3,9 +3,10 @@
 {% endblock %}
 {% block body %}
 <link rel="stylesheet" href="{{ url_for('static', filename = './Styles/products.css') }}">
-<div class="products">
-    <form action="/comparison" method="POST">
+<div class="prod-parent">
+    <form action="/comparison" method="POST" class = "products">
         {% for product in productlist %}
+<<<<<<< HEAD
 
             <button type="submit" name="selected_button" value="{{product.product_title}}">
             <img src="{{product.product_image_link}}" alt="" width = "200px" height="200px">
@@ -14,9 +15,24 @@
             <p>Min Quantity: {{product.product_min_qty}}</p>
             <p>List Price: {{product.product_list_price}}</p>
             <p>Final Price: {{product.product_final_price}}</p>
+=======
+        <div class="product">
+            <button type="submit" name="selected_button" value="product">
+
+                <div class="product-image">
+                    <img src="{{product.product_image_link}}" alt="" width="200px" height="200px">
+                </div>
+                <div class="product-details">
+                    <p id = "title">{{product.product_title}}</p>
+                    <p id = "brand">{{product.product_brand}}</p>
+                    <p>Min Quantity: {{product.product_min_qty}}</p>
+                    <p>List Price: {{product.product_list_price}}</p>
+                    <p>Final Price: {{product.product_final_price}}</p>
+                </div>
+>>>>>>> 13611328de3f284e49d426e675b3f64c65ecd691
             </button>
-            <br>
-            <br>
+
+        </div>
         {% endfor %}
         <input type="hidden" name="query" value={{ searchquery }}>
     </form>
@@ -27,12 +43,12 @@
     <input type="hidden" name="page link" value="{{page_link}}">
     <input type="hidden" name="total pages" value="{{total_pages}}">
     {% if current_page > 1 %}
-        <button type="submit" name = "button_name" value="{{ current_page - 1 }}"> Previous </button>
+    <button type="submit" name="button_name" value="{{ current_page - 1 }}"> Previous </button>
     {% endif %}
-    {% if current_page < total_pages %}
-        <button type="submit" name = "button_name" value="{{ current_page + 1 }}"> Next </button>
-    {% endif %}
-    <input type="hidden" name="query" value={{ searchquery }}>
+    {% if current_page < total_pages %} <button type="submit" name="button_name" value="{{ current_page + 1 }}"> Next
+        </button>
+        {% endif %}
+        <input type="hidden" name="query" value={{ searchquery }}>
 </form>
 
 
