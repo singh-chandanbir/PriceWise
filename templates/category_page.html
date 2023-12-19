@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block body %}
+ 
+    <button><a href="{{ url_for('landing') }}">Back</a></button>
+    <br>
+    <h2>You Searched For : {{searchquery}}</h2>
+    <h3>Here are the results </h3>
+    <hr>
+    <hr>
+    <results>
+    <form action="/Products" method="POST">
+        {% for category, subcategories in categories.items() %}
+            {{ category.title() }}
+            <ul>
+                {% for name, link in subcategories.items() %}
+                    <li><button type="submit" name = "selected_product" value="{{ link }}"> {{ name }} </button></li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endfor %}
+    </form>
+    </results>
+    <br>
+    <hr>
+{% endblock body %}
