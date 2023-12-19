@@ -17,7 +17,7 @@ def landing():
 @app.route('/categories', methods = ["POST"])
 def result():
     query = request.form.get("searchquery")
-    query = query.replace(" ", "%20")
+    # query = query.replace(" ", "%20")
     categorylist = getPages(query)
     return rt('category_page.html', searchquery = query, categories = categorylist)
 
