@@ -3,14 +3,16 @@
 {% block body %}
 
 {% for product in productlist %}
-
-    {% for key, value in product.items() %}
-    <div class="product_category_block"> 
-        {{key}} : {{value}} 
-    </div>
-        <br>
-    {% endfor %}
-    <hr>
+    <a href="{{product.product_link}}">
+        <img src="{{product.product_image_link}}" alt="" width = "200px" height="200px">
+        <p>Title: {{product.product_title}}</p>
+        <p>Brand: {{product.product_brand}}</p>
+        <p>Min Quantity: {{product.product_min_qty}}</p>
+        <p>List Price: {{product.product_list_price}}</p>
+        <p>Final Price: {{product.product_final_price}}</p>
+    </a>
+    <br>
+    <br>
 {% endfor %}
 
 <form action="/Products_page=" method="POST">
