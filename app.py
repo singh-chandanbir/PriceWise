@@ -33,11 +33,20 @@ def showProducts():
         detail_list = process_page(page_link)
         return rt('products.html', productlist = detail_list, total_pages = total_pages, current_page=current_page, page_link=page_link)
  
-@app.route("/flipkart", methods = ["POST"])
-def flipkart():
-    query = request.form.get("searchquery")
-    details_list = getFlipkartProducts(query)
-    return rt("flipkart.html", products = details_list)
+    
+@app.route('/Products_page=', methods=['POST'])
+def products_page():
+    page_number = request.form.get("button_name")
+    current_page = int(page_number)
+    final_page = request.form.get("total pages")
+    total_pages = int(final_page)
+    page_link = request.form.get("page link")
+    search_index = page_link.find('/search')
+    if search_index != -1:
+        result = page_link[:search_index + len('/search')]
+    url = result + f"?don_load_facets=true&home=false&page={current_page}"
+    detail_list = process_page(url)
+    return rt('products.html', productlist = detail_list, total_pages = total_pages, current_page = current_page, page_link=page_link)
  
 if __name__ == '__main__':
     app.run(debug=True)
