@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+{% for product in productlist %}
+
+    {% for key, value in product.items() %}
+        {{key}} : {{value}}
+        <br>
+    {% endfor %}
+    <hr>
+{% endfor %}
+
+<form action="/Products_page=" method="POST">
+    <input type="hidden" name="page link" value="{{page_link}}">
+    <input type="hidden" name="total pages" value="{{total_pages}}">
+    {% if current_page > 1 %}
+        <button type="submit" name = "button_name" value="{{ current_page - 1 }}"> Previous </button>
+    {% endif %}
+    {% if current_page < total_pages %}
+        <button type="submit" name = "button_name" value="{{ current_page + 1 }}"> Next </button>
+    {% endif %}
+</form>
+
+
+
+{% endblock body %}

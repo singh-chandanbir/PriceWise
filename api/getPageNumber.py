@@ -11,7 +11,6 @@ def get_page_number(url):
     highest_page_number=1
     
     if (htmlsoup.find('div', class_="pagination")):
-        detailsDict = {}
         page_links = htmlsoup.select('div.pagination a')
         page_numbers = [int(link['href'].split('=')[-1]) for link in page_links]
         highest_page_number = max(page_numbers)
