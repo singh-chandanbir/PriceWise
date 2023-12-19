@@ -62,3 +62,29 @@ navbar .referral{
 navbar .referral:hover{
     box-shadow: 0 0 5px 0.2px var(--secondary-color);
 }
+.back_arrow{
+    width: 35px;
+    float: left;
+
+}
+.your_search{
+    float: left;
+    margin-left: 10px;
+
+}
+.product_category_block{
+    float: left;
+    width: 40%;
+    height: 200px;
+    background-color: #859097;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+}
+.footer{
+    height: 50px;
+    background-color: #07222e;
+}
+.outer_product_category_block{
+    padding: 10px,10px,10px,10px;
+}
