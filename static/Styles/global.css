@@ -5,11 +5,15 @@
     padding: 0;
     background: none;
     font-family: var(--secondary-font);
+    text-decoration: none;
+
 }
 
 :root{
     --primary-color : #07222e;
     --secondary-color : #f7f3f3;
+    /* --secondary-color : #2d2a30;
+    --primary-color : #d9e1ff; */
     --secondary-font : "Nanum Gothic";
     --primary-font : "Signika Negative";
 }
@@ -17,7 +21,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-navbar,.quicksearch{
+navbar,.quicksearch,.searchbar{
     background-color: var(--primary-color);
     border-radius: 4px;
     margin: 2px;
@@ -57,30 +61,4 @@ navbar .referral{
 }
 navbar .referral:hover{
     box-shadow: 0 0 5px 0.2px var(--secondary-color);
-}
-.back_arrow{
-    width: 35px;
-    float: left;
-    
-}
-.your_search{
-    float: left;
-    margin-left: 10px;
-
-}
-.product_category_block{
-    float: left;
-    width: 40%;
-    height: 200px;
-    background-color: #859097;
-    padding: 10px 10px 10px 10px;
-    border-radius: 10px;
-    margin: 10px 10px 10px 10px;
-}
-.footer{
-    height: 50px;
-    background-color: #07222e;
-}
-.outer_product_category_block{
-    padding: 10px,10px,10px,10px;
 }

@@ -4,4 +4,61 @@
     align-items: center;
     color: var(--secondary-color);
     padding: 0.5em;
+    gap: 0.2em;
+}
+.head{
+    font-weight:bold;
+    font-family: var(--primary-font) ;
+}
+.searches{
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1em;
+}
+
+.searches a{
+    
+    /* border-right: 1px solid var(--secondary-color); */
+    color: var(--secondary-color);
+}
+.searches a::after{
+    content: "    |";
+    
+}
+
+
+/* Search Bar CSS */
+.searchbar {
+    height: 3.5em;
+    margin-top: .5em;
+    /* position: relative; */
+    /* padding: auto; */
+    display: flex;
+    /* gap: -4em; */
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar input[type="text"] {
+    background-color: var(--secondary-color);
+    width: 80%;  
+    height: 3em;
+    padding: 0 2em;
+    /* flex: 1; */
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.searchbar input[type="submit"] {
+    /* position: absolute; */
+    margin-left: -15.5em;
+    cursor: pointer;;
+    width: 15em;
+    height: 2.5em;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: var(--secondary-color);
+    /* transform: translateX(220%); */
+
 }
