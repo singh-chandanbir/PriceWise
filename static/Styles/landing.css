@@ -1,9 +1,16 @@
+html{
+    background-image: url(../media/background.jpg);
+    background-size:cover;
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-blend-mode: color-burn; */
+}
 .quicksearch{
     display: flex;
     flex-direction: column;
     align-items: center;
     color: var(--secondary-color);
-    padding: 0.5em;
+    padding: 0.5em 2em;
     gap: 0.2em;
 }
 .head{
@@ -11,6 +18,7 @@
     font-family: var(--primary-font) ;
 }
 .searches{
+    
     flex-wrap: wrap;
     display: flex;
     gap: 1em;
@@ -56,7 +64,7 @@
     cursor: pointer;;
     width: 15em;
     height: 2.5em;
-    background-color: var(--primary-color);
+    background-color: var(--hard-color);
     border-radius: 5px;
     color: var(--secondary-color);
     /* transform: translateX(220%); */

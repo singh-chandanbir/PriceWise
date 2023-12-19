@@ -13,12 +13,17 @@
 
 .back_arrow{
     width: 1.5em;
+    border-radius: 3px;
+    background-color: var(--secondary-color);
+
+    box-shadow: var(--box-shadow);
+    backdrop-filter: var(--backdrop-filter);
     }
 .your_search{
     
     margin-top: -4px;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 
 
 }
@@ -38,9 +43,13 @@
     flex-wrap: wrap;
     color: var(--secondary-color);
     padding: 1.5em;
+
 }
 .product_category_block{
     background-color: var(--primary-color);
+
+    box-shadow: var(--box-shadow);
+    backdrop-filter: var(--backdrop-filter);
     padding: 0.3em 0.5em 2em;
     border-radius: 10px;
 }
@@ -51,8 +60,8 @@
     font-family: var(--primary-font);
     font-weight: bold;
     /* width: 20em; */
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
+    color: var(--hard-color);
+    background-color: var(--secondary\-color);
 }
 
 .subcategories{
@@ -75,8 +84,4 @@
 .subcategories button:hover{
     filter: drop-shadow(1px 1px 2px white);
     
-}
-.footer{
-    height: 50px;
-    background-color: #07222e;
 }
