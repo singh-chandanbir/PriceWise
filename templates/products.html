@@ -5,7 +5,9 @@
 {% for product in productlist %}
 
     {% for key, value in product.items() %}
-        {{key}} : {{value}}
+    <div class="product_category_block"> 
+        {{key}} : {{value}} 
+    </div>
         <br>
     {% endfor %}
     <hr>
