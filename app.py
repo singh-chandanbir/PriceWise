@@ -1,7 +1,9 @@
 from flask import Flask,render_template as rt,session, redirect, url_for, request
 from api.GemPages import getPages
 
+
 app = Flask(__name__)
+current_page = 1
 
 app.secret_key = 'BCQWR#$@@WE@12332423@121'
 
