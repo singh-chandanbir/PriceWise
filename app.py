@@ -1,4 +1,5 @@
 from flask import Flask,render_template as rt,session, redirect, url_for, request
+from api.GemPages import getPages
 
 app = Flask(__name__)
 
@@ -11,8 +12,8 @@ def landing():
 @app.route("/categories", methods=["POST"])
 def category():
     query = request.form.get("searchquery")
-    print(query)
-    return rt("index.html")
+    categorylist = getPages(query)
+    return rt('category_page.html', searchquery = query, categories = categorylist)
 
 if __name__ == '__main__':
     app.run(debug=True)
