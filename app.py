@@ -2,6 +2,7 @@ from flask import Flask,render_template as rt,session, redirect, url_for, reques
 from api.GemPages import getPages
 from api.getPageNumber import get_page_number
 from api.GemProducts import process_page
+from api.flipkart import getFlipkartProducts
 
 app = Flask(__name__)
 
@@ -31,6 +32,12 @@ def showProducts():
     else :
         detail_list = process_page(page_link)
         return rt('products.html', productlist = detail_list, total_pages = total_pages, current_page=current_page, page_link=page_link)
+ 
+@app.route("/flipkart", methods = ["POST"])
+def flipkart():
+    query = request.form.get("searchquery")
+    details_list = getFlipkartProducts(query)
+    return rt("flipkart.html", products = details_list)
  
 if __name__ == '__main__':
     app.run(debug=True)

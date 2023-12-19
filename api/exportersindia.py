@@ -23,14 +23,12 @@ def get_exporters_products(query):
                 product_url_elem = script.find('a', class_='prdclk')
                 product_url = product_url_elem['href'] if product_url_elem else "No Product URL"
                 data = {"title": title, "brand": brand, "price": price, "image_url": image_url, "product_url": product_url}
-                details_list.append(data)        
+                details_list.append(data)
+                
+        return details_list
+        
     else:
         print("Failed to fetch content from the URL")
-
-    for data in details_list:
-        for key, value in data.items():
-            print(key, " : ", value)
-        print("\n")
         
 query = input("Enter product name: ")
 get_exporters_products(query)
