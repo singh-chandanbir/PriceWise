@@ -157,11 +157,21 @@
             {% endfor %}
         </div>
     </div>
-    <script>
-        const productData = {
-            labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
-            indiamartRates: {{ flipkartRates | tojson}},
-        alibabaRates: { { exportsRates | tojson } },
+    <div class='right'>
+        {% for product in exportslist %}
+
+        <img src="{{product.image_url}}" alt="" width="300px" height="300px">
+        <a href="{{product.product_url}}">Title: {{product.title}}</a>
+        <p>Price: {{product.price}}</p>
+
+        {% endfor %}
+    </div>
+</div>
+<script>
+    const productData = {
+        labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
+        indiamartRates: [],
+        alibabaRates: [],
     };
 
         let isGraphVisible = false;
