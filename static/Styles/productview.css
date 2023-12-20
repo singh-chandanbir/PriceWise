@@ -4,6 +4,10 @@
     justify-content: center;
     margin-top: 1em;
     color: var(--secondary-color);
+    box-sizing: border-box;
+    flex-direction: column; /* Adjust to column to stack the details vertically */
+    text-align: center; /* Center align text within each product card */
+    width: 30%; 
 }
 
 
@@ -79,4 +83,9 @@ canvas {
     border: 1px solid #ccc;
     display: none;
     /* Initially set to display none */
+}
+.comparsion_cards{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
