@@ -116,3 +116,22 @@ html{
       transform: translateX(-100%);
     }
   }
+  .footer{
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    backdrop-filter: var(--backdrop-filter);
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    margin: 0.2em 1em;
+  }
+  .footer .child_footer{
+    color: #fff;
+
+  }
+  .footer_text{
+    font-size: 10pt;
+    font-family: var(--primary-font) ;
+    color: var(--secondary-color);
+}
