@@ -1,5 +1,4 @@
 import json
-import random
 from flask import Flask,render_template as rt,session, redirect, url_for, request
 from api.GemPages import getPages
 from api.getPageNumber import get_page_number
@@ -30,13 +29,14 @@ def showProducts():
     url = "https://mkp.gem.gov.in" + page_link
     total_pages = get_page_number(url)
     query = request.form.get("query")
+    page_title = request.form.get("page_title")
     if total_pages == None:
         return rt("failure.html")
     else :
         detail_list = process_page(page_link)
         with open("list.json", 'w') as file:
             json.dump(detail_list, file)
-        return rt('products.html', productlist = detail_list, total_pages = total_pages, current_page=current_page, page_link=page_link, searchquery = query)
+        return rt('products.html', productlist = detail_list, total_pages = total_pages, current_page=current_page, page_link=page_link, searchquery = query, page_title = page_title)
  
 @app.route('/Products_page=', methods=['POST'])
 def products_page():
@@ -58,6 +58,7 @@ def products_page():
 @app.route("/comparison", methods = ["POST"])
 def comparison():
     product_link = request.form.get("selected_button")
+    page_title = request.form.get("page_title")
     selected_product = ""
     query = request.form.get("query")
     with open("list.json", 'r') as f:
@@ -66,16 +67,15 @@ def comparison():
         if product['product_link'] == product_link:
             selected_product = product
             break
+    if (selected_product["product_brand"].title() == "Unbranded") or "Unbranded" in selected_product['product_title'].title():
+        flipkartlist = getFlipkartProducts(page_title)
+        exportslist = get_exporters_products(page_title)
     
-    flipkartlist = getFlipkartProducts(selected_product['product_title'])
-    flipkartRates = [random.randrange(300, 1000) for _ in range(5)]
-    print(flipkartRates)
+    else:
+        flipkartlist = getFlipkartProducts(selected_product['product_title'])
+        exportslist = get_exporters_products(selected_product['product_title'])
     
-    exportslist = get_exporters_products(query)
-    
-    exportersRates = [random.randrange(300, 1000) for _ in range(5)]
-    
-    return rt("product_view.html", flipkartlist = flipkartlist, flipkartRates = flipkartRates , exportslist = exportslist , exportsRates = exportersRates ,product=selected_product, product_url = product_link)
+    return rt("product_view.html", flipkartlist = flipkartlist , exportslist = exportslist ,product=selected_product, product_url = product_link)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=80)

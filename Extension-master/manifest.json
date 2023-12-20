@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+ 
+    "name": "Test", 
+    "description": "My first Chrome extension.",
+    "browser_action": {
+        "default_icon": "cat.jpeg",
+        "default_popup": "extension.html"
+    },
+    "permissions": [
+        "activeTab", 
+        "https://www.exportersindia.com/",
+        "https://www.flipkart.com/"
+    ],
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["brain.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["brain.js"],
+        "persistent": false
+    }
+}
