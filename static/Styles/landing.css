@@ -75,3 +75,44 @@ html{
     text-decoration: none;
     color: #fff;
 }
+.brands{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    overflow: hidden;
+
+}
+.heading{
+    font-weight:bold;
+    font-size: 20pt;
+    font-family: var(--primary-font) ;
+    color: var(--secondary-color);
+}
+.brand {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .brand img {
+    width: 75em;
+    animation: scrollLeft 15s linear infinite;
+  }
+
+  .brand img:first-child {
+    animation-delay: 0s;
+  }
+
+  .brand img:last-child {
+    animation-delay: 0s; /* Adjust the delay to match the animation duration */
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

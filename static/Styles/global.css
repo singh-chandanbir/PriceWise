@@ -25,7 +25,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-navbar,.quicksearch,.searchbar{
+navbar,.quicksearch,.searchbar,.brands{
     box-shadow: var(--box-shadow);
     backdrop-filter: var(--backdrop-filter);
     background-color: var(--primary-color);
@@ -68,6 +68,14 @@ navbar .referral{
 navbar .referral:hover{
     box-shadow: 0 0 5px 0.2px var(--secondary-color);
 }
+<<<<<<< HEAD
+=======
+.footer{
+    height: 50px;
+    background-color: #07222e;
+
+}
+>>>>>>> fe53e6e0de14a588bb498bed3c351f5493ce4947
 
 .failure{
     margin: auto;
