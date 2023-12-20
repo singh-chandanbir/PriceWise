@@ -29,7 +29,7 @@ def showProducts():
     url = "https://mkp.gem.gov.in" + page_link
     total_pages = get_page_number(url)
     query = request.form.get("query")
-    page_title = request.form.get("page_title"
+    page_title = request.form.get("page_title")
     if total_pages == None:
         return rt("failure.html")
     else :
