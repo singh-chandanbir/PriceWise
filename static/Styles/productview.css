@@ -1,0 +1,82 @@
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    color: var(--secondary-color);
+}
+
+
+
+#chart-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.left {
+    width: 45%;
+    background-color: lightblue;
+}
+.right {
+    width: 45%;
+    background-color: lightgreen;
+}
+
+#showGraphBtn {
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    background: #7079f0;
+    color: white;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3em;
+}
+
+.iconButton {
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7a8cf3;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+
+.contactButton:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em #5566c2;
+}
+
+/* .contactButton span:after {
+    content: 'Hide graph';
+} */
+
+.contactButton:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em #5566c2;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    display: none;
+    /* Initially set to display none */
+}
