@@ -24,9 +24,10 @@ html{
     gap: 1em;
 }
 
-.searches a{
+.searches button{
     
     /* border-right: 1px solid var(--secondary-color); */
+    
     color: var(--secondary-color);
 }
 .searches a::after{
