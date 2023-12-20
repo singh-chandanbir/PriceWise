@@ -33,19 +33,19 @@
             </a>
         </div>
     </navbar>
-    
-    
-    
-    <form action="/categories" method="POST" class = "searchbar">
-        
-            
-                <!-- <div class="col-md-12"> -->
-                    <input type="text" autocomplete="off" autofocus
-                        placeholder="Enter Search Query Here" required name="searchquery" id="searchquery">
-                    <input class=" search_btn" type="submit" value="Search">
-                <!-- </div> -->
-            
-        
+
+
+
+    <form action="/categories" method="POST" class="searchbar">
+
+
+        <!-- <div class="col-md-12"> -->
+        <input type="text" autocomplete="off" autofocus placeholder="Enter Search Query Here" required
+            name="searchquery" id="searchquery">
+        <input class=" search_btn" type="submit" value="Search">
+        <!-- </div> -->
+
+
     </form>
     {% block suggestions %}
 
@@ -65,32 +65,31 @@
             <a href="#">Health</a>
             <a href="#">Outdoors</a>
             <a href="#">Furniture</a>
-           
+
 
         </div>
     </div>
-    
+
     <div class="brands">
         <div class="heading">
             Your Go-To Platforms To Compare From
         </div>
         <div class="brand">
-            <img id = "img1"src=" {{ url_for('static', filename = 'media/1.png' )}} " alt="">
-            <img id = "img2" src=" {{ url_for('static', filename = 'media/1.png' )}} " alt="">
+            <img id="img1" src=" {{ url_for('static', filename = 'media/1.png' )}} " alt="">
+            <img id="img2" src=" {{ url_for('static', filename = 'media/1.png' )}} " alt="">
         </div>
 
 
     </div>
-{% endblock %}
-
-
-
     
-    <div class="footer">
-       
-            <p class="footer_text">Guru Nanak Dev Engineering College &#169 Team TechyTrek</p>
 
-    </div>{% block body %}{% endblock body %}
+    <div class="footer">
+
+        <p class="footer_text">Guru Nanak Dev Engineering College &#169 Team TechyTrek</p>
+
+    </div>
+    {% endblock %}
+    {% block body %}{% endblock body %}
 
 </body>
 
