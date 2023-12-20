@@ -29,7 +29,7 @@ def showProducts():
     url = "https://mkp.gem.gov.in" + page_link
     total_pages = get_page_number(url)
     query = request.form.get("query")
-    page_title = request.form.get("page_title")
+    page_title = request.form.get("page_title"
     if total_pages == None:
         return rt("failure.html")
     else :
@@ -59,6 +59,9 @@ def products_page():
 def comparison():
     product_link = request.form.get("selected_button")
     page_title = request.form.get("page_title")
+    search_index = page_title.find("(")
+    if search_index != -1:
+        page_title = page_title[:search_index]
     selected_product = ""
     query = request.form.get("query")
     with open("list.json", 'r') as f:
@@ -67,13 +70,8 @@ def comparison():
         if product['product_link'] == product_link:
             selected_product = product
             break
-    if (selected_product["product_brand"].title() == "Unbranded") or "Unbranded" in selected_product['product_title'].title():
-        flipkartlist = getFlipkartProducts(page_title)
-        exportslist = get_exporters_products(page_title)
-    
-    else:
-        flipkartlist = getFlipkartProducts(selected_product['product_title'])
-        exportslist = get_exporters_products(selected_product['product_title'])
+    flipkartlist = getFlipkartProducts(page_title)
+    exportslist = get_exporters_products(page_title)
     
     return rt("product_view.html", flipkartlist = flipkartlist , exportslist = exportslist ,product=selected_product, product_url = product_link)
 

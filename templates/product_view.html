@@ -90,15 +90,9 @@
     <div class='right'>
         {% for product in exportslist %}
 
-<<<<<<< HEAD
-            <img src="{{product.image}}" alt="" width = "250px" height="250px">
-            <a href="{{product.product_link}}">Title: {{product.title}}</a>
-            <p>Price: {{product.price}}</p>
-=======
         <img src="{{product.image_url}}" alt="" width="300px" height="300px">
         <a href="{{product.product_url}}">Title: {{product.title}}</a>
         <p>Price: {{product.price}}</p>
->>>>>>> 547bc44758a2588b58564b5399d6eb41b324c3a2
 
         {% endfor %}
     </div>
@@ -106,13 +100,8 @@
 <script>
     const productData = {
         labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
-<<<<<<< HEAD
         indiamartRates: [],
         alibabaRates: [],
-=======
-        indiamartRates: {{ flipkartRates | tojson}},
-    alibabaRates: { { exportsRates | tojson } },
->>>>>>> 547bc44758a2588b58564b5399d6eb41b324c3a2
     };
 
     let isGraphVisible = false;
@@ -123,44 +112,6 @@
         const canvas = document.getElementById('productRateChart');
         const button = document.getElementById('showGraphBtn');
 
-<<<<<<< HEAD
-    if (isGraphVisible) {
-        // Hide the graph
-        canvas.style.display = 'none';
-        button.querySelector('span').innerHTML = 'Show Graph';
-        if (myChart) {
-            myChart.destroy(); // Destroy the existing chart
-        }
-    } else {
-        // Show the graph
-        canvas.style.display = 'block';
-        const ctx = canvas.getContext('2d');
-        myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: productData.labels,
-                datasets: [{
-                    label: 'FlipKart Rates',
-                    data: productData.indiamartRates,
-                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'ExportersIndia Rates',
-                    data: productData.alibabaRates,
-                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }
-            ]
-            },
-            options: {
-                
-                scales: {
-                    y: {
-                        beginAtZero: true
-=======
         if (isGraphVisible) {
             // Hide the graph
             canvas.style.display = 'none';
@@ -198,7 +149,6 @@
                         y: {
                             beginAtZero: true
                         }
->>>>>>> 547bc44758a2588b58564b5399d6eb41b324c3a2
                     }
                 }
             });
