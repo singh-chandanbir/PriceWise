@@ -6,86 +6,156 @@
 <link rel="stylesheet" href="{{ url_for('static', filename = './Styles/productview.css') }}">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div class="comparsion_cards">
-<!-- gemportal product -->
-<button type="submit" name="selected_button" value="{{product.product_link}}">
-    <div class="product">
-        <div class="product-image">
-            <img src="{{product.product_image_link}}" alt="" width="200px" height="200px">
-        </div>
-        <div class="product-details">
-            <p id="title">{{product.product_title}}</p>
-            <p id="brand">{{product.product_brand}}</p>
-            <p>Min Quantity: {{product.product_min_qty}}</p>
-            <p style="text-decoration: line-through;">{{product.product_final_price}}</s></p>
+<div class="wrapper">
+    <!-- gemportal product -->
+    <div class="heading">
+        Product Comparison
 
-            <p> {{product.product_list_price}}</p>
-        </div>
     </div>
-</button>
-<!--emarket 1-->
-<button type="submit" name="selected_button" value="{{product.product_link}}">
-    <div class="product">
-        <div class="product-image">
-            <img src="{{product.product_image_link}}" alt="" width="200px" height="200px">
-        </div>
-        <div class="product-details">
-            <p id="title">{{product.product_title}}</p>
-            <p id="brand">{{product.product_brand}}</p>
-            <p>Min Quantity: {{product.product_min_qty}}</p>
-            <p style="text-decoration: line-through;">{{product.product_final_price}}</s></p>
 
-            <p> {{product.product_list_price}}</p>
-        </div>
+    <div class="comparison">
+
+        <div class="gemdetail">
+        <button type="submit" name="selected_button" value="{{product.product_link}}">
+            <div class="product">
+                <div class="product-image">
+                    <img src="{{product.product_image_link}}" alt="" width="200px" height="200px">
+                </div>
+                <div class="product-details">
+                    <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+                    <p id="title">{{product.product_title}}</p>
+                    <p id="brand">{{product.product_brand}}</p>
+                    <p id="minqty">Min Quantity: {{product.product_min_qty}}</p>
+
+                    <p style="text-decoration: line-through;">{{product.product_final_price}}</s></p>
+
+                    <p> {{product.product_list_price}}</p>
+                </div>
+            </div>
+        </button>
     </div>
-</button>
-<!--emarket2-->
-<button type="submit" name="selected_button" value="{{product.product_link}}">
-    <div class="product">
-        <div class="product-image">
-            <img src="{{product.product_image_link}}" alt="" width="200px" height="200px">
-        </div>
-        <div class="product-details">
-            <p id="title">{{product.product_title}}</p>
-            <p id="brand">{{product.product_brand}}</p>
-            <p>Min Quantity: {{product.product_min_qty}}</p>
-            <p style="text-decoration: line-through;">{{product.product_final_price}}</s></p>
+        <!--emarket 1-->
 
-            <p> {{product.product_list_price}}</p>
+        <div class="others">
+
+
+
+            <!-- website 1 -->
+
+            <button type="submit" name="selected_button" value="{{product.product_link}}">
+                <div class="product">
+                    <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+
+                    <div class="product-image">
+                        <img src="{{product.product_image_link}}" alt="" >
+                    </div>
+                    <div class="product-details">
+                        <p id="title">{{product.product_title}}</p>
+                        <p id="brand">{{product.product_brand}}</p>
+                        
+
+                       
+
+                        <p> {{product.product_list_price}}</p>
+                    </div>
+                </div>
+            </button>
+
+
+
+
+            <button type="submit" name="selected_button" value="{{product.product_link}}">
+                <div class="product">
+                    <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+
+                    <div class="product-image">
+                        <img src="{{product.product_image_link}}" alt="" >
+                    </div>
+                    <div class="product-details">
+                        <p id="title">{{product.product_title}}</p>
+                        <p id="brand">{{product.product_brand}}</p>
+                        
+
+                       
+
+                        <p> {{product.product_list_price}}</p>
+                    </div>
+                </div>
+            </button>
+
+
+
+
+            <button type="submit" name="selected_button" value="{{product.product_link}}">
+                <div class="product">
+                    <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+
+                    <div class="product-image">
+                        <img src="{{product.product_image_link}}" alt="" >
+                    </div>
+                    <div class="product-details">
+                        <p id="title">{{product.product_title}}</p>
+                        <p id="brand">{{product.product_brand}}</p>
+                        
+
+                       
+
+                        <p> {{product.product_list_price}}</p>
+                    </div>
+                </div>
+            </button>
+
+
+
+
+
+
+
+
         </div>
+
+
+
     </div>
-</button>
-</div>
 
-
-<!-- 
+    <!-- 
 <img src="{{product.product_image_link}}" alt="" width = "300px" height="300px">
 <a href="{{product.product_link}}"></a>Title: {{product.product_title}} </button>
 <p>Brand: {{product.product_brand}}</p>
 <p>Min Quantity: {{product.product_min_qty}}</p>
 <p>List Price: {{product.product_list_price}}</p> -->
 
-<div id="chart-container">
-    <button id="showGraphBtn" class="contactButton" onclick="toggleGraph()"><span>Show graph</span>
-        <div class="iconButton">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path fill="currentColor"
-                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
-            </svg>
+    <div id="chart-container">
+        <button id="showGraphBtn" class="contactButton" onclick="toggleGraph()"><span>Show graph</span>
+            <div class="iconButton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill="currentColor"
+                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
+                </svg>
+            </div>
+        </button>
+        <canvas id="productRateChart"></canvas>
+    </div>
+    <div class="container">
+        <div class="left">
+            {% for product in flipkartlist %}
+
+            <img src="{{product.image_url}}" alt="" width="300px" height="300px">
+            <a href="{{product.product_url}}">Title: {{product.title}}</a>
+            <p>Price: {{product.price}}</p>
+
+            {% endfor %}
         </div>
-    </button>
-    <canvas id="productRateChart"></canvas>
-</div>
-<div class="container">
-    <div class="left">
-        {% for product in flipkartlist %}
+        <div class='right'>
+            {% for product in exportslist %}
 
-        <img src="{{product.image_url}}" alt="" width="300px" height="300px">
-        <a href="{{product.product_url}}">Title: {{product.title}}</a>
-        <p>Price: {{product.price}}</p>
+            <img src="{{product.image_url}}" alt="" width="300px" height="300px">
+            <a href="{{product.product_url}}">Title: {{product.title}}</a>
+            <p>Price: {{product.price}}</p>
 
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
     <div class='right'>
         {% for product in exportslist %}
@@ -104,60 +174,60 @@
         alibabaRates: [],
     };
 
-    let isGraphVisible = false;
+        let isGraphVisible = false;
 
-    let myChart; // Declare myChart outside of the function
+        let myChart; // Declare myChart outside of the function
 
-    function toggleGraph() {
-        const canvas = document.getElementById('productRateChart');
-        const button = document.getElementById('showGraphBtn');
+        function toggleGraph() {
+            const canvas = document.getElementById('productRateChart');
+            const button = document.getElementById('showGraphBtn');
 
-        if (isGraphVisible) {
-            // Hide the graph
-            canvas.style.display = 'none';
-            button.querySelector('span').innerHTML = 'Show Graph';
-            if (myChart) {
-                myChart.destroy(); // Destroy the existing chart
-            }
-        } else {
-            // Show the graph
-            canvas.style.display = 'block';
-            const ctx = canvas.getContext('2d');
-            myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: productData.labels,
-                    datasets: [{
-                        label: 'Indiamart Rates',
-                        data: productData.indiamartRates,
-                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
+            if (isGraphVisible) {
+                // Hide the graph
+                canvas.style.display = 'none';
+                button.querySelector('span').innerHTML = 'Show Graph';
+                if (myChart) {
+                    myChart.destroy(); // Destroy the existing chart
+                }
+            } else {
+                // Show the graph
+                canvas.style.display = 'block';
+                const ctx = canvas.getContext('2d');
+                myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: productData.labels,
+                        datasets: [{
+                            label: 'Indiamart Rates',
+                            data: productData.indiamartRates,
+                            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Alibaba Rates',
+                            data: productData.alibabaRates,
+                            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }
+                        ]
                     },
-                    {
-                        label: 'Alibaba Rates',
-                        data: productData.alibabaRates,
-                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }
-                    ]
-                },
-                options: {
+                    options: {
 
-                    scales: {
-                        y: {
-                            beginAtZero: true
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
                         }
                     }
-                }
-            });
-            button.querySelector('span').innerHTML = 'Hide Graph';
+                });
+                button.querySelector('span').innerHTML = 'Hide Graph';
+            }
+
+            isGraphVisible = !isGraphVisible;
         }
 
-        isGraphVisible = !isGraphVisible;
-    }
+    </script>
 
-</script>
-
-{% endblock body %}
+    {% endblock body %}

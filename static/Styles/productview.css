@@ -1,91 +1,58 @@
 .product {
+    padding: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 1em;
     color: var(--secondary-color);
     box-sizing: border-box;
-    flex-direction: column; /* Adjust to column to stack the details vertically */
+    flex-direction: row; /* Adjust to column to stack the details vertically */
     text-align: center; /* Center align text within each product card */
-    width: 30%; 
+    /* width: 100%; */
+    border-radius: 10px; 
+    height: 30em;
 }
 
-
-
-#chart-container {
-    max-width: 600px;
-    margin: 20px auto;
+#title{
+    width: 20em;
 }
-
-.container {
+#minqty{
+    margin: 1em 0em;
+}
+.wrapper{
     display: flex;
-    justify-content: space-between;
-}
-.left {
-    width: 45%;
-    background-color: lightblue;
-}
-.right {
-    width: 45%;
-    background-color: lightblue;
-}
-
-#showGraphBtn {
-    padding: 10px;
-    margin: 10px 0;
-    cursor: pointer;
-    background: #7079f0;
-    color: white;
-    font-family: inherit;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 0.9em;
-    border: none;
-    letter-spacing: 0.05em;
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    box-shadow: inset 0 0 1.6em -0.6em #714da6;
-    overflow: hidden;
-    position: relative;
-    height: 2.8em;
-    padding-right: 3em;
+    gap: 2em;
+    justify-content: center;
+    margin-top: 0.5em;
 }
 
-.iconButton {
-    margin-left: 1em;
-    position: absolute;
+.comparison{
     display: flex;
+    align-items:center;
+    justify-content: baseline;
+}
+.others{
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow-x: scroll; */
+    gap: 1em;
+    width: 40em;
+}
+.others button{
+    width: 15em;
+}
+#title{
+    width: 12em;
+}
+
+.others  .product{
+    display: flex;
+    margin-top: 0.1em;
     align-items: center;
     justify-content: center;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 0.7em;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #7a8cf3;
-    right: 0.3em;
-    transition: all 0.3s;
-}
-
-.contactButton:hover {
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em #5566c2;
-}
-
-/* .contactButton span:after {
-    content: 'Hide graph';
-} */
-
-.contactButton:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: 0.05em 0.05em #5566c2;
-}
-
-canvas {
-    border: 1px solid #ccc;
-    display: none;
-    /* Initially set to display none */
-}
-.comparsion_cards{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    /* padding: 0.1em 0.2em; */
+    flex-direction: column;
+    gap: 1em;
 }
