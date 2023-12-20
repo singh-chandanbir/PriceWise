@@ -9,29 +9,5 @@
 <p>Brand: {{product.product_brand}}</p>
 <p>Min Quantity: {{product.product_min_qty}}</p>
 <p>List Price: {{product.product_list_price}}</p>
-<p>Final Price: {{product.product_final_price}}</p>
-
-<h3>similar product on exportersindia</h3>
-{% for product in exporterslist %}
-    <button type="submit" name="selected_button" value="product">
-    <img src="{{product.image_url}}" alt="" width = "200px" height="200px">
-    <a href="{{product.product_url}}"><p>Title: {{product.title}}</p></a>
-    <p>Brand: {{product.brand}}</p>
-    <p>List Price: {{product.price}}</p>
-    </button>
-    <br>
-    <br>
-{% endfor %}
-<h3>similar product on flipkart</h3>
-{% for product in flipkartlist %}
-    <button type="submit" name="selected_button" value="product">
-    <img src="{{product.image_url}}" alt="" width = "200px" height="200px">
-    <a href="{{product.product_url}}"><p>Title: {{product.title}}</p></a>
-    <p>Brand: {{product.brand}}</p>
-    <p>List Price: {{product.price}}</p>
-    </button>
-    <br>
-    <br>
-{% endfor %}
 
 {% endblock body %}

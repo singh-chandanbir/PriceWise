@@ -6,18 +6,8 @@
 <div class="prod-parent">
     <form action="/comparison" method="POST" class = "products">
         {% for product in productlist %}
-<<<<<<< HEAD
-
-            <button type="submit" name="selected_button" value="{{product.product_title}}">
-            <img src="{{product.product_image_link}}" alt="" width = "200px" height="200px">
-            <p>Title: {{product.product_title}}</p>
-            <p>Brand: {{product.product_brand}}</p>
-            <p>Min Quantity: {{product.product_min_qty}}</p>
-            <p>List Price: {{product.product_list_price}}</p>
-            <p>Final Price: {{product.product_final_price}}</p>
-=======
         <div class="product">
-            <button type="submit" name="selected_button" value="product">
+            <button type="submit" name="selected_button" value="{{product.product_link}}">
 
                 <div class="product-image">
                     <img src="{{product.product_image_link}}" alt="" width="200px" height="200px">
@@ -29,7 +19,6 @@
                     <p>List Price: {{product.product_list_price}}</p>
                     <p>Final Price: {{product.product_final_price}}</p>
                 </div>
->>>>>>> 13611328de3f284e49d426e675b3f64c65ecd691
             </button>
 
         </div>

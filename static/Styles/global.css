@@ -68,13 +68,6 @@ navbar .referral{
 navbar .referral:hover{
     box-shadow: 0 0 5px 0.2px var(--secondary-color);
 }
-<<<<<<< HEAD
-.footer{
-    height: 50px;
-    background-color: #07222e;
-
-}
-=======
 
 .failure{
     margin: auto;
@@ -88,4 +81,3 @@ navbar .referral:hover{
     padding-bottom: 10px;
     font-family: var(--secondary-font);
 }
->>>>>>> 0e7619e1197d5373cdfe0c9bfeb6c6ec5c8be99b

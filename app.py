@@ -1,3 +1,4 @@
+import json
 from flask import Flask,render_template as rt,session, redirect, url_for, request
 from api.GemPages import getPages
 from api.getPageNumber import get_page_number
@@ -32,6 +33,8 @@ def showProducts():
         return rt("failure.html")
     else :
         detail_list = process_page(page_link)
+        with open("list.json", 'w') as file:
+            json.dump(detail_list, file)
         return rt('products.html', productlist = detail_list, total_pages = total_pages, current_page=current_page, page_link=page_link, searchquery = query)
  
 @app.route('/Products_page=', methods=['POST'])
@@ -47,15 +50,22 @@ def products_page():
         result = page_link[:search_index + len('/search')]
     url = result + f"?don_load_facets=true&home=false&page={current_page}"
     detail_list = process_page(url)
+    with open("list.json", 'w') as file:
+        json.dump(detail_list, file)
     return rt('products.html', productlist = detail_list, total_pages = total_pages, current_page = current_page, page_link=page_link, searchquery = query)
  
 @app.route("/comparison", methods = ["POST"])
 def comparison():
-    product = request.form.get("selected_button")
-    query = request.form.get("query")
-    exporterslist = get_exporters_products(query)
-    flipkartlist = getFlipkartProducts(query)
-    return rt("product_view.html", product=product, exporterslist = exporterslist, flipkartlist = flipkartlist)
+    product_link = request.form.get("selected_button")
+    selected_product = ""
+    with open("list.json", 'r') as f:
+        new_list = json.load(f)
+    for product in new_list:
+        if product['product_link'] == product_link:
+            selected_product = product
+            break
+
+    return rt("product_view.html", product=selected_product, product_url = product_link)
 
 if __name__ == '__main__':
     app.run(debug=True)
