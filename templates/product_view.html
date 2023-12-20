@@ -37,9 +37,6 @@
         <!--emarket 1-->
 
         <div class="others">
-
-
-
             <!-- website 1 -->
             {% for flipproduct in flipkartlist %}
                 {% if loop.first %}
@@ -47,6 +44,7 @@
                         <div class="product">
                             <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
 
+<<<<<<< HEAD
                             <div class="product-image">
                                 <img src="{{flipproduct.image_url}}" alt="" height=150px width=150px>
                             </div>
@@ -63,6 +61,22 @@
                     </button>
                 {% endif %}
             {% endfor %}
+=======
+            <button type="submit" name="selected_button" value="{{product.product_link}}">
+                <div class="product">
+                    <img src=" {{ url_for('static', filename = 'media/flipcart.svg')}} " alt="">
+
+                    <div class="product-image">
+                        <img src="{{product.product_image_link}}" alt="" >
+                    </div>
+                    <div class="product-details">
+                        <p id="title">{{product.product_title}}</p>
+                        <p id="brand">{{product.product_brand}}</p>
+                        <p> {{product.product_list_price}}</p>
+                    </div>
+                </div>
+            </button>
+>>>>>>> 3f62b7f6cfc5e89cb741740b2a3c2802661a36c9
 
 
 
@@ -144,27 +158,55 @@
         </button>
         <canvas id="productRateChart"></canvas>
     </div>
+
+
+
+    
     <div class="container">
         <div class="left">
             {% for product in flipkartlist %}
 
-            <img src="{{product.image_url}}" alt="" width="300px" height="300px">
-            <a href="{{product.product_url}}">Title: {{product.title}}</a>
-            <p>Price: {{product.price}}</p>
+            <div class="product">
+                <div class="product-image">
+                    <img src="{{product.image_url}}" alt="" width="300px" height="300px">
+                </div>
+                <div class="product-details">
+                    <a href="{{product.product_url}}">Title: {{product.title}}</a>
+                    <p>Price: {{product.price}}</p>
+                </div>
+            </div>
 
             {% endfor %}
         </div>
+
+
+
+
         <div class='right'>
             {% for product in exportslist %}
-
-            <img src="{{product.image_url}}" alt="" width="300px" height="300px">
-            <a href="{{product.product_url}}">Title: {{product.title}}</a>
-            <p>Price: {{product.price}}</p>
+            <div class="product">
+                <div class="product-image">
+                    <img src="{{product.image_url}}" alt="" width="300px" height="300px">
+                </div>
+                <div class="product-details">
+                    <a href="{{product.product_url}}">Title: {{product.title}}</a>
+                    <p>Price: {{product.price}}</p>
+                </div>
+            </div>
 
             {% endfor %}
         </div>
     </div>
+<<<<<<< HEAD
 </div>
+=======
+   
+
+
+
+
+
+>>>>>>> 3f62b7f6cfc5e89cb741740b2a3c2802661a36c9
 <script>
     const productData = {
         labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
