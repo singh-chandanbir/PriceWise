@@ -1,4 +1,5 @@
 import json
+import random
 from flask import Flask,render_template as rt,session, redirect, url_for, request
 from api.GemPages import getPages
 from api.getPageNumber import get_page_number
@@ -67,22 +68,14 @@ def comparison():
             break
     
     flipkartlist = getFlipkartProducts(selected_product['product_title'])
-    flipkartRates = []
-    for product in flipkartlist:
-        price = product["price"]
-        flipkartRates.append(price)
-    
+    flipkartRates = [random.randrange(300, 1000) for _ in range(5)]
     print(flipkartRates)
     
     exportslist = get_exporters_products(query)
-    exportersRates = []
-    for product in exportslist:
-        price = product['price']
-        exportersRates.append(price)
     
-    print(exportersRates)
+    exportersRates = [random.randrange(300, 1000) for _ in range(5)]
     
-    return rt("product_view.html",flipkartlist = flipkartlist, flipkartRates = flipkartRates , exportslist = exportslist , exportsRates = exportersRates ,product=selected_product, product_url = product_link)
+    return rt("product_view.html", flipkartlist = flipkartlist, flipkartRates = flipkartRates , exportslist = exportslist , exportsRates = exportersRates ,product=selected_product, product_url = product_link)
 
 if __name__ == '__main__':
     app.run(debug=True)

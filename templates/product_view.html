@@ -10,6 +10,19 @@
         margin: 20px auto;
     }
 
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .left {
+        width: 45%;
+        background-color: lightblue;
+    }
+    .right {
+        width: 45%;
+        background-color: lightgreen;
+    }
+
     #showGraphBtn {
         padding: 10px;
         margin: 10px 0;
@@ -83,23 +96,26 @@
     </button>
     <canvas id="productRateChart"></canvas>
 </div>
+<div class="container">
+    <div class="left">
+        {% for product in flipkartlist %}
 
-{% for product in flipkartlist %}
+            <img src="{{product.image_url}}" alt="" width = "300px" height="300px">
+            <a href="{{product.product_url}}">Title: {{product.title}}</a>
+            <p>Price: {{product.price}}</p>
 
-<img src="{{product.image_url}}" alt="" width = "300px" height="300px">
-<a href="{{product.product_url}}">Title: {{product.title}}</a>
-<p>Price: {{product.price}}</p>
+        {% endfor %}
+    </div>
+    <div class='right'>
+        {% for product in exportslist %}
 
-{% endfor %}
+            <img src="{{product.image_url}}" alt="" width = "300px" height="300px">
+            <a href="{{product.product_url}}">Title: {{product.title}}</a>
+            <p>Price: {{product.price}}</p>
 
-{% for product in flipkartlist %}
-
-<img src="{{product.image_url}}" alt="" width = "300px" height="300px">
-<a href="{{product.product_url}}">Title: {{product.title}}</a>
-<p>Price: {{product.price}}</p>
-
-{% endfor %}
-
+        {% endfor %}
+    </div>
+</div>
 <script>
     const productData = {
         labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
