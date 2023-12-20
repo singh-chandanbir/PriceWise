@@ -38,33 +38,77 @@
 
         <div class="others" style="margin-left: 50px;">
             <!-- website 1 -->
+            {% for flipproduct in flipkartlist %}
+                {% if loop.first %}
+                    <button type="submit" name="selected_button" value="{{flipproduct.product_url}}">
+                        <div class="product">
+                            <img src=" {{ url_for('static', filename = 'media/flipcart.svg')}} " alt="">
 
+<<<<<<< HEAD
+                            <div class="product-image">
+                                <img src="{{flipproduct.image_url}}" alt="" height=150px width=150px>
+                            </div>
+                            <div class="product-details">
+                                <p id="title">{{flipproduct.title}}</p>
+                                <p id="brand">{{flipproduct.brand}}</p>
+                                
+=======
             <button type="submit" name="selected_button" value="{{product.product_link}}">
                 <div class="product">
                     <img style="height: 100px; width: 150px;" src=" {{ url_for('static', filename = 'media/flipcart.svg')}} " alt="">
+>>>>>>> abdb75a8dc6a1c5bc6dfced677d2dbd877081c6b
 
-                    <div class="product-image">
-                        <img src="{{product.product_image_link}}" alt="" >
-                    </div>
-                    <div class="product-details">
-                        <p id="title">{{product.product_title}}</p>
-                        <p id="brand">{{product.product_brand}}</p>
-                        <p> {{product.product_list_price}}</p>
-                    </div>
-                </div>
-            </button>
+                            
 
+                                <p> {{flipproduct.price}}</p>
+                            </div>
+                        </div>
+                    </button>
+                {% endif %}
+            {% endfor %}
 
 
 
+            {% for exportproduct in exportslist %}
+                {% if loop.first %}
+                    <button type="submit" name="selected_button" value="{{exportproduct.product_url}}">
+                        <div class="product">
+                            <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+
+<<<<<<< HEAD
+                            <div class="product-image">
+                                <img src="{{exportproduct.image_url}}" alt="" height=150px width=150px>
+                            </div>
+                            <div class="product-details">
+                                <p id="title">{{exportproduct.title}}</p>
+                                <p id="brand">{{exportproduct.brand}}</p>
+                                
+
+                            
+
+                                <p> {{product.product_list_price}}</p>
+                            </div>
+                        </div>
+                    </button>
+                {% endif %}
+            {% endfor %}
+                    
+=======
            
+>>>>>>> abdb75a8dc6a1c5bc6dfced677d2dbd877081c6b
 
 
 
 
+<<<<<<< HEAD
+            <button type="submit" name="selected_button" value="{{product.product_link}}">
+                <div class="product">
+                    <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+=======
             <button style="margin-left: 20px;" type="submit" name="selected_button" value="{{product.product_link}}">
                 <div class="product">
                     <img style="height: 100px; width: 150px;" src=" {{ url_for('static', filename = 'media/exporterindia.png')}} " alt="">
+>>>>>>> abdb75a8dc6a1c5bc6dfced677d2dbd877081c6b
 
                     <div class="product-image">
                         <img src="{{product.product_image_link}}" alt="" >
@@ -101,7 +145,10 @@
 <p>Min Quantity: {{product.product_min_qty}}</p>
 <p>List Price: {{product.product_list_price}}</p> -->
 
+<<<<<<< HEAD
+=======
     
+>>>>>>> abdb75a8dc6a1c5bc6dfced677d2dbd877081c6b
 
 
     
