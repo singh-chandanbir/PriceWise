@@ -23,6 +23,13 @@ def result():
     categorylist = getPages(query)
     return rt('category_page.html', searchquery = query, categories = categorylist)
 
+@app.route('/quickaccess', methods = ["POST"])
+def quick_access():
+    query = request.form.get("selected_button")
+    # query = query.replace(" ", "%20")
+    categorylist = getPages(query)
+    return rt('category_page.html', searchquery = query, categories = categorylist)
+
 @app.route('/Products', methods = ["POST"])
 def showProducts():
     page_link = request.form.get("selected_product")

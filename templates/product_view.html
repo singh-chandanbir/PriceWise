@@ -42,9 +42,8 @@
                 {% if loop.first %}
                     <button type="submit" name="selected_button" value="{{flipproduct.product_url}}">
                         <div class="product">
-                            <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+                            <img src=" {{ url_for('static', filename = 'media/flipcart.svg')}} " alt="">
 
-<<<<<<< HEAD
                             <div class="product-image">
                                 <img src="{{flipproduct.image_url}}" alt="" height=150px width=150px>
                             </div>
@@ -61,22 +60,6 @@
                     </button>
                 {% endif %}
             {% endfor %}
-=======
-            <button type="submit" name="selected_button" value="{{product.product_link}}">
-                <div class="product">
-                    <img src=" {{ url_for('static', filename = 'media/flipcart.svg')}} " alt="">
-
-                    <div class="product-image">
-                        <img src="{{product.product_image_link}}" alt="" >
-                    </div>
-                    <div class="product-details">
-                        <p id="title">{{product.product_title}}</p>
-                        <p id="brand">{{product.product_brand}}</p>
-                        <p> {{product.product_list_price}}</p>
-                    </div>
-                </div>
-            </button>
->>>>>>> 3f62b7f6cfc5e89cb741740b2a3c2802661a36c9
 
 
 
@@ -146,19 +129,6 @@
 <p>Min Quantity: {{product.product_min_qty}}</p>
 <p>List Price: {{product.product_list_price}}</p> -->
 
-    <div id="chart-container">
-        <button id="showGraphBtn" class="contactButton" onclick="toggleGraph()"><span>Show graph</span>
-            <div class="iconButton">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path fill="currentColor"
-                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
-                </svg>
-            </div>
-        </button>
-        <canvas id="productRateChart"></canvas>
-    </div>
-
 
 
     
@@ -197,16 +167,12 @@
             {% endfor %}
         </div>
     </div>
-<<<<<<< HEAD
-</div>
-=======
    
 
 
 
 
 
->>>>>>> 3f62b7f6cfc5e89cb741740b2a3c2802661a36c9
 <script>
     const productData = {
         labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
