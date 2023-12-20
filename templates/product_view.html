@@ -41,47 +41,54 @@
 
 
             <!-- website 1 -->
+            {% for flipproduct in flipkartlist %}
+                {% if loop.first %}
+                    <button type="submit" name="selected_button" value="{{flipproduct.product_url}}">
+                        <div class="product">
+                            <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
 
-            <button type="submit" name="selected_button" value="{{product.product_link}}">
-                <div class="product">
-                    <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+                            <div class="product-image">
+                                <img src="{{flipproduct.image_url}}" alt="" height=150px width=150px>
+                            </div>
+                            <div class="product-details">
+                                <p id="title">{{flipproduct.title}}</p>
+                                <p id="brand">{{flipproduct.brand}}</p>
+                                
 
-                    <div class="product-image">
-                        <img src="{{product.product_image_link}}" alt="" >
-                    </div>
-                    <div class="product-details">
-                        <p id="title">{{product.product_title}}</p>
-                        <p id="brand">{{product.product_brand}}</p>
-                        
+                            
 
-                       
-
-                        <p> {{product.product_list_price}}</p>
-                    </div>
-                </div>
-            </button>
+                                <p> {{flipproduct.price}}</p>
+                            </div>
+                        </div>
+                    </button>
+                {% endif %}
+            {% endfor %}
 
 
 
+            {% for exportproduct in exportslist %}
+                {% if loop.first %}
+                    <button type="submit" name="selected_button" value="{{exportproduct.product_url}}">
+                        <div class="product">
+                            <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
 
-            <button type="submit" name="selected_button" value="{{product.product_link}}">
-                <div class="product">
-                    <img src=" {{ url_for('static', filename = 'media/gem-new-logo-v6.svg')}} " alt="">
+                            <div class="product-image">
+                                <img src="{{exportproduct.image_url}}" alt="" height=150px width=150px>
+                            </div>
+                            <div class="product-details">
+                                <p id="title">{{exportproduct.title}}</p>
+                                <p id="brand">{{exportproduct.brand}}</p>
+                                
 
-                    <div class="product-image">
-                        <img src="{{product.product_image_link}}" alt="" >
-                    </div>
-                    <div class="product-details">
-                        <p id="title">{{product.product_title}}</p>
-                        <p id="brand">{{product.product_brand}}</p>
-                        
+                            
 
-                       
-
-                        <p> {{product.product_list_price}}</p>
-                    </div>
-                </div>
-            </button>
+                                <p> {{product.product_list_price}}</p>
+                            </div>
+                        </div>
+                    </button>
+                {% endif %}
+            {% endfor %}
+                    
 
 
 
@@ -156,15 +163,6 @@
 
             {% endfor %}
         </div>
-    </div>
-    <div class='right'>
-        {% for product in exportslist %}
-
-        <img src="{{product.image_url}}" alt="" width="300px" height="300px">
-        <a href="{{product.product_url}}">Title: {{product.title}}</a>
-        <p>Price: {{product.price}}</p>
-
-        {% endfor %}
     </div>
 </div>
 <script>
