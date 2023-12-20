@@ -58,14 +58,31 @@ def products_page():
 def comparison():
     product_link = request.form.get("selected_button")
     selected_product = ""
+    query = request.form.get("query")
     with open("list.json", 'r') as f:
         new_list = json.load(f)
     for product in new_list:
         if product['product_link'] == product_link:
             selected_product = product
             break
-
-    return rt("product_view.html", product=selected_product, product_url = product_link)
+    
+    flipkartlist = getFlipkartProducts(selected_product['product_title'])
+    flipkartRates = []
+    for product in flipkartlist:
+        price = product["price"]
+        flipkartRates.append(price)
+    
+    print(flipkartRates)
+    
+    exportslist = get_exporters_products(query)
+    exportersRates = []
+    for product in exportslist:
+        price = product['price']
+        exportersRates.append(price)
+    
+    print(exportersRates)
+    
+    return rt("product_view.html",flipkartlist = flipkartlist, flipkartRates = flipkartRates , exportslist = exportslist , exportsRates = exportersRates ,product=selected_product, product_url = product_link)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,11 +3,164 @@
 {% endblock %}
 {% block body %}
 <link rel="stylesheet" href="{{ url_for('static', filename = './Styles/products.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    #chart-container {
+        max-width: 600px;
+        margin: 20px auto;
+    }
 
+    #showGraphBtn {
+        padding: 10px;
+        margin: 10px 0;
+        cursor: pointer;
+        background: #7079f0;
+        color: white;
+        font-family: inherit;
+        font-size: 17px;
+        font-weight: 500;
+        border-radius: 0.9em;
+        border: none;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        box-shadow: inset 0 0 1.6em -0.6em #714da6;
+        overflow: hidden;
+        position: relative;
+        height: 2.8em;
+        padding-right: 3em;
+    }
+
+    .iconButton {
+        margin-left: 1em;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.2em;
+        width: 2.2em;
+        border-radius: 0.7em;
+        box-shadow: 0.1em 0.1em 0.6em 0.2em #7a8cf3;
+        right: 0.3em;
+        transition: all 0.3s;
+    }
+
+    .contactButton:hover {
+        transform: translate(-0.05em, -0.05em);
+        box-shadow: 0.15em 0.15em #5566c2;
+    }
+
+    /* .contactButton span:after {
+        content: 'Hide graph';
+    } */
+
+    .contactButton:active {
+        transform: translate(0.05em, 0.05em);
+        box-shadow: 0.05em 0.05em #5566c2;
+    }
+
+    canvas {
+        border: 1px solid #ccc;
+        display: none;
+        /* Initially set to display none */
+    }
+</style>
 <img src="{{product.product_image_link}}" alt="" width = "300px" height="300px">
 <a href="{{product.product_link}}"></a>Title: {{product.product_title}} </button>
 <p>Brand: {{product.product_brand}}</p>
 <p>Min Quantity: {{product.product_min_qty}}</p>
 <p>List Price: {{product.product_list_price}}</p>
+
+<div id="chart-container">
+    <button id="showGraphBtn" class="contactButton" onclick="toggleGraph()"><span>Show graph</span>
+        <div class="iconButton">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path fill="currentColor"
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
+            </svg>
+        </div>
+    </button>
+    <canvas id="productRateChart"></canvas>
+</div>
+
+{% for product in flipkartlist %}
+
+<img src="{{product.image_url}}" alt="" width = "300px" height="300px">
+<a href="{{product.product_url}}">Title: {{product.title}}</a>
+<p>Price: {{product.price}}</p>
+
+{% endfor %}
+
+{% for product in flipkartlist %}
+
+<img src="{{product.image_url}}" alt="" width = "300px" height="300px">
+<a href="{{product.product_url}}">Title: {{product.title}}</a>
+<p>Price: {{product.price}}</p>
+
+{% endfor %}
+
+<script>
+    const productData = {
+        labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5'],
+        indiamartRates: {{flipkartRates | tojson}},
+        alibabaRates: {{exportsRates | tojson}},
+    };
+
+    let isGraphVisible = false;
+
+let myChart; // Declare myChart outside of the function
+
+function toggleGraph() {
+    const canvas = document.getElementById('productRateChart');
+    const button = document.getElementById('showGraphBtn');
+
+    if (isGraphVisible) {
+        // Hide the graph
+        canvas.style.display = 'none';
+        button.querySelector('span').innerHTML = 'Show Graph';
+        if (myChart) {
+            myChart.destroy(); // Destroy the existing chart
+        }
+    } else {
+        // Show the graph
+        canvas.style.display = 'block';
+        const ctx = canvas.getContext('2d');
+        myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: productData.labels,
+                datasets: [{
+                    label: 'Indiamart Rates',
+                    data: productData.indiamartRates,
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Alibaba Rates',
+                    data: productData.alibabaRates,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+            ]
+            },
+            options: {
+                
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        button.querySelector('span').innerHTML = 'Hide Graph';
+    }
+
+    isGraphVisible = !isGraphVisible;
+}
+
+</script>
 
 {% endblock body %}
