@@ -27,7 +27,7 @@ html{
 .searches button{
     
     /* border-right: 1px solid var(--secondary-color); */
-    
+
     color: var(--secondary-color);
 }
 .searches a::after{
@@ -126,13 +126,15 @@ html{
     background-color: var(--primary-color);
     border-radius: 4px;
     margin: 0.2em 1em;
-  }
-  .footer .child_footer{
+    align-items: center;
     color: #fff;
+    text-align: center;
 
   }
+  
   .footer_text{
     font-size: 10pt;
     font-family: var(--primary-font) ;
     color: var(--secondary-color);
+    align-self: center;
 }
