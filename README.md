@@ -1,25 +1,19 @@
-# PriceWise: SIH Finals by Team Techy Trek
-
-**Team Details:**
-- Team ID: 8334
-- Idea ID: 6846
-- PS ID: SIH1360
-
-**Team Members:**
-- Team Leader: Chandarbir Singh
-- Team Members:
-  - Dilraj Singh
-  - Agampreet Singh
-  - Aashish Bindha
-  - Rupalli Devi
-  - Arshjeet Singh
-
-**Team Mentor:**
-- Harkirat Singh
+# PriceWise:by Team Techy Trek
 
 ## Instructions
 
-### Installation:
+### Setting up the Virtual Envirnment:
+
+1. Create a Envirment name venv by runng the foolwing command
+   ```bash
+   python venv -m venv 
+
+2. Activate the virtual envirnment 
+   ```bash
+   source venv/bin/activate
+
+
+### Running the Project 
 
 1. Install dependencies by running the following command:
    ```bash
